@@ -1,0 +1,49 @@
+syntax = "proto2";
+
+package make_filterbank_proto;
+
+message source_t {
+  optional string name = 1;
+  optional double ra = 2;
+  optional double dec = 3;
+}
+
+message observation_t {
+  optional double azimuth = 1;
+  optional double zenith = 2;
+  optional double start_mjd = 3;
+  optional int32 telescope_id = 4;
+  optional int32 machine_id = 5;
+  optional int32 num_ifs = 6;
+  optional double sample_time_us = 7;
+  optional bool barycentric = 8;
+  optional bool pulsarcentric = 9;
+}
+
+message filterbank_t {
+  required string name = 1;
+  required double fch1_MHz = 2;
+  optional int32 start = 3;
+  optional int32 end = 4;
+}
+
+message make_filterbank_config {
+  required double bandwidth_MHz = 1;
+  required double channel_offset_MHz = 2;
+  required int32 num_channels = 3;
+
+  required int32 input_bits = 8;
+  optional int32 output_bits = 7;
+
+  enum endianness_t {
+    LITTLE = 0;
+    BIG = 1;
+  }
+
+  required endianness_t endian = 9;
+
+  optional source_t source = 4;
+  optional observation_t observation = 5;
+
+  repeated filterbank_t filterbank = 6;
+}

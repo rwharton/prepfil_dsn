@@ -1,0 +1,3 @@
+The file pulsars is obtained with the following command:
+
+psrcat -c "name raj decj" -o short_csv > pulsars

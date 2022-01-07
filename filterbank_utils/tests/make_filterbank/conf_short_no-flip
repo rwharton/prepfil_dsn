@@ -1,0 +1,25 @@
+bandwidth_MHz: 1000.0
+channel_offset_MHz: 1.0
+num_channels: 1024
+input_bits: 16
+endian: LITTLE
+
+filterbank {
+  name: "S-RCP"
+  fch1_MHz: 2293
+}
+
+filterbank {
+  name: "S-LCP"
+  fch1_MHz: 2293
+}
+
+filterbank {
+  name: "X-RCP"
+  fch1_MHz: 8690
+}
+
+filterbank {
+  name: "X-LCP"
+  fch1_MHz: 8690
+}

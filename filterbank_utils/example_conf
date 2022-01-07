@@ -1,0 +1,48 @@
+bandwidth_MHz: 1000.0
+channel_offset_MHz: -1.0
+num_channels: 1024
+input_bits: 16
+endian: BIG;
+
+source {
+  name: "J1119-6127"
+  ra: 111914.3
+  dec: -612749.5
+}
+
+observation {
+  sample_time_us: 512.0
+  start_mjd: 57619.769143518519
+  telescope_id: 12
+  machine_id: 999
+  barycentric: false
+  pulsarcentric: true
+}
+
+filterbank {
+  name: "S-LCP"
+  fch1_MHz: 2293
+  start: 0
+  end: 95
+}
+
+filterbank {
+  name: "S-RCP"
+  fch1_MHz: 2293
+  start: 150
+  end: 250
+}
+
+filterbank {
+  name: "X-LCP"
+  fch1_MHz: 8690
+  start: 300
+  end: 600
+}
+
+filterbank {
+  name: "X-RCP"
+  fch1_MHz: 8690
+  start: 700
+  end: 1023
+}

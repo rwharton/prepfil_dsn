@@ -1,0 +1,4 @@
+add_subdirectory(sigproc_file)
+add_subdirectory(sigproc_util)
+add_subdirectory(make_filterbank_config)
+add_subdirectory(make_filterbank)
